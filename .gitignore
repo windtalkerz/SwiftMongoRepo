@@ -1,0 +1,73 @@
+# ======================================================================================================
+# GITIGNORE - für swift library
+# ======================================================================================================
+
+# -------------- VON GIT IGNORIERT -------------------------------------------------------------------------------------
+# Wird lokal beim Auflösen von Abhängigkeiten erstellt.
+/Packages
+
+# SwiftPM Registry Konfiguration – nutzerspezifisch
+.swiftpm/configuration/registries.json
+
+# Zugangsdaten & Tokens (Sicherheitsrisiko!)
+.netrc
+
+# Xcode-Projektbezogene Dateien
+.DS_Store
+*.xcworkspace
+*.xcuserstate
+*.xcodeproj/*           # Ignoriere alles im xcodeproj-Ordner
+xcuserdata/             # Nutzerbezogene Xcode-Infos
+
+# SwiftPM Build-Ordner
+.build/
+.swiftpm/xcode/
+
+# Logs
+*.log
+
+# macOS Finder-Dateien
+*.DS_Store
+
+# Test Coverage
+*.gcno
+
+# Umgebungsvariablen und Secrets
+.env*
+Secrets.swift
+
+# Editor/Tool-spezifisch
+Package.resolved
+.idea/
+.vscode/
+*.swiftsourceinfo
+
+# Xcode Derived Data
+DerivedData/
+
+# Temporäre Dateien
+*.tmp
+*.swp
+*.bak
+*~
+
+# ===========================================================================================
+# Railway Hosting – nicht versionieren
+# ===========================================================================================
+
+# Lokale Railway-Projektdatei (wird automatisch erzeugt)
+.railway/
+
+# Railway-spezifische Umgebungsvariablen (sollten NICHT ins Repo)
+railway.env
+.env.railway
+
+# Deployment-Artefakte (z. B. von manuellem Build)
+output.log
+
+
+# ===========================================================================================
+# -------------- AUSNAHMEN – Dateien, die DOCH versioniert werden sollen ---------------------------
+# ===========================================================================================
+!*.xcodeproj/project.pbxproj       # Projektstruktur (unbedingt nötig)
+!*.xcodeproj/xcshareddata          # Geteilte Schemes für CI/Test
